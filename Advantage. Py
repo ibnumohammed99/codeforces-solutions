@@ -1,0 +1,13 @@
+for i in range(int(input())):
+    n = int(input())
+    arr = list(map(int , input().split()))
+    max_index = arr.index(max(arr))
+    max_val = max(arr)
+    arr[max_index] = 0
+    max_curr = max(arr)
+    for i in range (n):
+        if arr[i] == 0 :
+            arr[i] = max_val - max_curr
+        else:
+            arr[i] = arr[i]-max_val 
+    print(*arr)        
